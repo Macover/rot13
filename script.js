@@ -6,7 +6,7 @@ const matrixInputDE = document.getElementById('matrixInputDE');
 
 const rotInputEN = document.getElementById('rotInputEN');
 const inverseInputMatrixDE = document.getElementById('inverseInputMatrixDE');
-
+const finalMessage = document.getElementById('finalMessage')
 
 /* CONSTANTS */
 const LATIN_ALPHABET = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -41,7 +41,19 @@ messageInputDE.addEventListener('input',(e)=>{
     /* call the method to return the new string and insert it into the matrixInputEN's value */
     const initialMessage = decodeMessageMatrix(decryptedMatrixMessage);
     rotInputEN.value = initialMessage;
+
+    /* call the method to return the new string and insert it into the matrixInputEN's value */
+    const decodeRot13Message = decodeRot13(initialMessage);
+    finalMessage.value = decodeRot13Message;
 });
+
+const decodeRot13 = rot13Message =>{    
+    let decorderRotNewMessage = '';
+    for (let i = 0; i < rot13Message.length; i++) {        
+        decorderRotNewMessage += newLetterEncodeRot(rot13Message[i]);    
+    }
+    return decorderRotNewMessage; 
+}
 
 const decodeNumbers = array =>{
     const newArray = [];
@@ -67,8 +79,7 @@ const decodeMessageMatrix = decryptedMatrixMessage =>{
         for (let j = 0; j < decryptedMatrixMessage[i].length; j++) {
             initialMessage += getLetter(decryptedMatrixMessage[i][j]);            
         }
-    }
-    console.log(decryptedMatrixMessage)
+    }    
     return initialMessage;
 }
 const getLetter = number =>{
@@ -120,11 +131,11 @@ const encodeMatrix = (encryptedRot13Message) =>{
 const encodeRot13 = ORIGINAL_MESSAGE =>{    
     let decorderRotNewMessage = '';
     for (let i = 0; i < ORIGINAL_MESSAGE.length; i++) {        
-        decorderRotNewMessage += newLetterRot(ORIGINAL_MESSAGE[i]);    
+        decorderRotNewMessage += newLetterEncodeRot(ORIGINAL_MESSAGE[i]);    
     }
     return decorderRotNewMessage;    
 }
-const newLetterRot = letter =>{
+const newLetterEncodeRot = letter =>{
     let newLetter = '';
     for (let i = 0; i < LATIN_ALPHABET.length; i++) {
         if(letter === LATIN_ALPHABET[i] || letter === LATIN_ALPHABET[i].toUpperCase()){       
