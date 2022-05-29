@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>rot13</title>
+    <title>Algoritmos de cifrado</title>
 </head>
 <body>
     <div class="container">        
@@ -16,12 +16,12 @@
         <div class="container__decorder-card-container">
             <div class="decorder-card__item">
                 <p class="decorder-item__label">Mensaje</p>
-                <input type="text" class="decorder-item__input">
+                <input id="messageInputDE" type="text" class="decorder-item__input">
             </div>            
             <img src="icons/right-arrow.png" alt="" class="right-arrow">
             <div class="decorder-card__item">
                 <p class="decorder-item__label">Rot13</p>
-                <input type="text" class="decorder-item__input">
+                <input id="rotInputDE" type="text" class="decorder-item__input" disabled>
             </div>            
             <img src="icons/right-arrow.png" alt="" class="right-arrow">
             <div class="decorder-card__item">
@@ -48,5 +48,6 @@
             <button class="decorder__cpy-text">Copiar texto</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
