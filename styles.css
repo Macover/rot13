@@ -24,23 +24,25 @@ button{
     --cpyBtnColor: #090;
 }
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--backgroundColor);
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 .isDisabled{ display: none; }
 .isEnabledFlex { display: flex;}
 
-.container {    
-    max-width: 80%;
-    display: flex;
-    min-height: 50%;
+.container {        
+    margin: 20px auto;
+    max-width: 90%;
+    min-height: max-content;
+    display: flex;    
     flex-direction: column;
     gap: 1.5em;
     padding: 20px;
@@ -132,16 +134,21 @@ body {
 }
 
 .container__decorder-card-container{    
-    display: flex;
+    display: flex;    
     width: 100%;
     height: max-content;
-    justify-content: space-between;    
+    justify-content: space-between;   
+    box-sizing: border-box;
 }
-.decorder-card__item{        
+.decorder-card__item{      
+    box-sizing: border-box;
+    width: 100%;  
     font-weight: 400;
     background-color: var(--glassItem);
     border-radius: 8px;
     padding: 5px 0 0;
+    display: flex;
+    flex-direction: column;
 }
 .decorder-item__label{
     padding: 5px 0;
@@ -150,6 +157,8 @@ body {
     font-size: 15px;
 }
 .decorder-item__input{
+    box-sizing: border-box;
+    width: 100%;
     text-align: center;
     padding: 8px;
     background-color: var(--glassItem);
@@ -158,7 +167,10 @@ body {
     border-bottom-right-radius: 8px;    
     border: none;
 }
-.right-arrow{
+.icon__container{    
+    text-align: center;
+}
+.down-arrow{
     width: 30px;
     height: 30px;
     margin: auto 20px;    
