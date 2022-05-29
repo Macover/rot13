@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    outline: none;
+}
+button{
+    cursor: pointer;
+}
+
+:root {
+    --backgroundColor: linear-gradient(90deg, rgb(136, 46, 109) 33%, rgb(126, 67, 27) 100%);
+    --glass: rgba(255, 255, 255, 0.54);
+    --glassItem: rgba(255, 255, 255, 0.34);
+    --primaryColor: rgba(136, 46, 109,1);
+    --black: #242d49;    
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);    
+    --cpyBtnColor: #090;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--backgroundColor);
+    background-repeat: no-repeat;
+}
+
+.isDisabled{ display: none; }
+.isEnabledFlex { display: flex;}
+
+.container {    
+    max-width: 80%;
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 20px;
+    background: var(--glass);
+    box-shadow: var(--boxShadow);
+    border-radius: 2rem;
+}
+
+.container__title {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 1em;
+    border-radius: 1rem;
+    background-color: var(--glassItem);     
+    color: var(--primaryColor);
+    font-family: 'Montserrat', sans-serif;
+    text-transform:uppercase;
+}
+
+.container__alert-messages {
+    width: 100%;
+    min-height: 55px;    
+    display: flex;
+    flex-direction: column;    
+    position: relative;    
+}
+
+.container__alert-messages span {
+    width: max-content;    
+    background-color: rgba(255, 0, 0, 0.09);
+    color: #f00;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 2rem;
+    padding: .5em 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    transform: translate(-50%,-50%);
+
+    animation-name: messageAnimationShowUp;
+    animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+
+@keyframes messageAnimationShowUp {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+        transform: translate(-50%,-50%);
+    }    
+}
+@keyframes messageAnimationSuccess {
+    0%{
+        transform: translate(-50%,-50%);
+        font-size: 15px;
+    }
+    50%{
+        font-size: 18px;
+    }
+    100%{        
+        font-size: 15px;
+        transform: translate(-50%,-50%);
+    }    
+}
+@keyframes messageAnimationError {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    20%{
+        transform: translate(-57%,-50%);
+    }
+    40%{
+        transform: translate(-43%,-50%);
+    }
+    60%{
+        transform: translate(-57%,-50%);
+    }
+    80%{
+        transform: translate(-43%,-50%);
+    }
+    100%{
+        transform: translate(-50%,-50%);
+    }    
+}
+
+.container__decorder-card-container{    
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: space-between;    
+}
+.decorder-card__item{        
+    font-weight: 400;
+    background-color: var(--glassItem);
+    border-radius: 8px;
+    padding: 5px 0 0;
+}
+.decorder-item__label{
+    padding: 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.decorder-item__input{
+    padding: 8px;
+    background-color: var(--glassItem);
+    box-shadow: var(--boxShadow);
+    border-bottom-left-radius: 8px;    
+    border-bottom-right-radius: 8px;    
+    border: none;
+}
+.right-arrow{
+    width: 30px;
+    height: 30px;
+    margin: auto 20px;    
+}
+.decorder__cpy-text{
+    width: max-content;
+    height: 30px;
+    background-color: var(--cpyBtnColor);
+    border: none;    
+    margin: auto 10px;
+    border-radius: .5rem;
+    font-weight: 700;
+    color: #fff;
+    transition: filter, box-shadow .75s; 
+    padding: 5px;
+}
