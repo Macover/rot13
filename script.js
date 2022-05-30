@@ -21,7 +21,6 @@ const INVERSE_MATRIX = [
     [1 / 11, -2 / 11, 3 / 11],
     [7 / 11, -3 / 11, -1 / 11]
 ];
-
 messageInputDE.addEventListener('input',(e)=>{
 
     const ORIGINAL_MESSAGE = e.target.value;    
@@ -46,7 +45,6 @@ messageInputDE.addEventListener('input',(e)=>{
     const decodeRot13Message = decodeRot13(initialMessage);
     finalMessage.value = decodeRot13Message;
 });
-
 const decodeRot13 = rot13Message =>{    
     let decorderRotNewMessage = '';
     for (let i = 0; i < rot13Message.length; i++) {        
@@ -54,7 +52,6 @@ const decodeRot13 = rot13Message =>{
     }
     return decorderRotNewMessage; 
 }
-
 const decodeNumbers = array =>{
     const newArray = [];
     for (let i = 0; i < INVERSE_MATRIX.length; i++) {

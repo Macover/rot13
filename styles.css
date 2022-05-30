@@ -34,10 +34,6 @@ body {
     background-repeat: no-repeat;
     box-sizing: border-box;
 }
-
-.isDisabled{ display: none; }
-.isEnabledFlex { display: flex;}
-
 .container {        
     margin: 20px auto;
     max-width: 90%;
@@ -62,77 +58,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-transform:uppercase;
 }
-
-.container__alert-messages {
-    width: 100%;
-    min-height: 55px;    
-    display: flex;
-    flex-direction: column;    
-    position: relative;    
-}
-
-.container__alert-messages span {
-    width: max-content;    
-    background-color: rgba(255, 0, 0, 0.09);
-    color: #f00;
-    font-weight: 700;
-    font-size: 15px;
-    border-radius: 2rem;
-    padding: .5em 1em;
-    position: absolute;
-    top: 50%;
-    left: 50%;    
-    transform: translate(-50%,-50%);
-
-    animation-name: messageAnimationShowUp;
-    animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-duration: .5s;
-}
-
-@keyframes messageAnimationShowUp {
-    0%{
-        transform: translate(-50%,-50%);
-    }
-    100%{
-        transform: translate(-50%,-50%);
-    }    
-}
-@keyframes messageAnimationSuccess {
-    0%{
-        transform: translate(-50%,-50%);
-        font-size: 15px;
-    }
-    50%{
-        font-size: 18px;
-    }
-    100%{        
-        font-size: 15px;
-        transform: translate(-50%,-50%);
-    }    
-}
-@keyframes messageAnimationError {
-    0%{
-        transform: translate(-50%,-50%);
-    }
-    20%{
-        transform: translate(-57%,-50%);
-    }
-    40%{
-        transform: translate(-43%,-50%);
-    }
-    60%{
-        transform: translate(-57%,-50%);
-    }
-    80%{
-        transform: translate(-43%,-50%);
-    }
-    100%{
-        transform: translate(-50%,-50%);
-    }    
-}
-
 .container__decorder-card-container{    
     display: flex;    
     width: 100%;
